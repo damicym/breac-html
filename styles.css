@@ -28,6 +28,7 @@ nav {
     letter-spacing: 2px;
     margin: 0;
     margin-right: 70px;
+    transition: all .3s;
 }
 .navbar-link{
     text-decoration: none;
@@ -146,4 +147,23 @@ h2{
     opacity: 1;
     border-width: 1.5px;
     transition: all .3s;
+}
+
+@media screen and (max-width: 720px) {
+    nav {
+        gap: 10px;
+    }
+    .home-navbar {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+    .navbar-link{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .home-navbar {
+        font-size: 1.5rem;
+    }
 }
