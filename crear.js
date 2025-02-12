@@ -4,8 +4,7 @@ const añadirCard = card => {
     localStorage.setItem('cards', JSON.stringify(cards))
 }
 
-function function1(){
-    console.log("asdasdasd")
+function function1() {
     document.getElementById('input-pov').click()
 }
 
@@ -19,16 +18,16 @@ const fechaHoy = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Dat
 document.getElementById('fecha-hoy').innerHTML = fechaHoy
 
 fetch('data/agentes.json')
-.then(data => data.json())
-.then(data => {
-    agentes = data
-    localStorage.setItem('test', JSON.stringify(agentes))
-    // <option value="astra">Astra</option>
-    agentes.map(agente => {
-        let opcion = `<option value="${agente}">${capitalizeFirstLetter(agente)}</option>`
-        document.getElementById('agente').innerHTML += opcion
+    .then(data => data.json())
+    .then(data => {
+        agentes = data
+        localStorage.setItem('test', JSON.stringify(agentes))
+        // <option value="astra">Astra</option>
+        agentes.map(agente => {
+            let opcion = `<option value="${agente}">${capitalizeFirstLetter(agente)}</option>`
+            document.getElementById('agente').innerHTML += opcion
+        })
     })
-})
 
 // JSON.stringify(dataEnJSON) --> Devuelve un string
 // JSON.parse(string) --> Devuelve un JSON
@@ -37,8 +36,15 @@ document.getElementById("input-pov").addEventListener('input', event => {
     const povPreview = document.getElementById('pov-preview')
     const povFileInput = event.target
     const povFile = povFileInput.files[0]
-    if (povFile) povPreview.style.display = 'inline-block'
-    else povPreview.style.display = 'none'
+    if (povFile) {
+        povPreview.style.display = 'inline-block'
+        povPreview.style.border = "0px"
+    }
+    else {
+        povPreview.src = "./images/pov-placeholder.png"
+        povPreview.style.border = "3px solid #273E47"
+        povPreview.style.borderRadius = "10px"
+    }
     povPreview.src = URL.createObjectURL(povFile)
 })
 

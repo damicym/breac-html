@@ -7,8 +7,10 @@
     --color4: #BD632F;
     --color5: #273E47;
     --color5-alpha: rgba(39, 62, 71, 0.6);
+    --color6: #757574;
 }
-.btn.btn-success{
+
+.btn.btn-success {
     background-color: var(--color4);
     border: 2px;
     border-radius: 3px;
@@ -17,22 +19,25 @@
     font-size: 1.5rem;
     transition: all .3s;
 }
-.btn.btn-success:hover{
+
+.btn.btn-success:hover {
     color: var(--color5);
     transform: scale(1.1);
 }
-.btn.btn-light{
+
+.btn.btn-light {
     background-color: var(--color5);
     border: 2px;
     border-radius: 3px;
     text-decoration: none;
-    color: var(--color3);
+    color: var(--color2);
     font-size: 1.3rem;
     transition: all .2s;
     margin-top: 10px;
 }
-.btn.btn-light:hover{
-    color: var(--color2);
+
+.btn.btn-light:hover {
+    color: var(--color3);
     transform: scale(1.05);
 }
 
@@ -51,6 +56,7 @@ nav {
     gap: 70px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
 .home-navbar {
     font-size: 2.6rem;
     letter-spacing: 2px;
@@ -58,63 +64,70 @@ nav {
     margin-right: 70px;
     transition: all .3s;
 }
-.navbar-link{
+
+.navbar-link {
     text-decoration: none;
     color: var(--color2);
     font-size: 1.5rem;
     transition: all .3s;
 }
 
-.navbar-link:hover{
+.navbar-link:hover {
     color: var(--color3);
     transform: scale(1.1);
 }
-.main_title{
+
+.main_title {
     text-decoration: none;
 }
-body{
+
+body {
     font-family: montserrat;
-    font-weight:450;
+    font-weight: 450;
     margin-bottom: 100px;
     margin-top: calc(70px + 20px);
     background-color: #D8C99B;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='333.3' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.04'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
 }
-p{
+
+p {
     font-size: large;
 }
+
 h1 {
     font-size: 3rem;
     letter-spacing: 2px;
 }
-.mapa-titulo{
+
+.mapa-titulo {
     color: rgb(39, 62, 71);
     font-size: 2rem;
     text-align: center;
 }
-h2{
+
+h2 {
     color: rgb(39, 62, 71);
     font-size: 2rem;
 }
 
-.card-container{
+.card-container {
     margin-left: 60px;
     margin-right: 60px;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    justify-content:left;
+    justify-content: left;
     margin-bottom: 50px;
     /* justify-content: center; */
 }
 
 @media screen and (max-width: 1019px) {
-    .card-container{
+    .card-container {
         justify-content: center;
     }
 }
 
-.card{
+.card {
     background-color: rgb(216, 151, 60);
     border: 3px solid rgb(216, 151, 60);
     border-radius: 10px;
@@ -126,29 +139,31 @@ h2{
     max-width: 600px;
 }
 
-.form-crear{
-    display:flex;
+.form-crear {
+    display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     /* border: 1px solid red; */
 }
-.card-form{
+
+.card-form {
     background-color: rgb(216, 151, 60);
     border: 3px solid rgb(216, 151, 60);
     border-radius: 10px;
     padding: 10px;
     filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
     margin: auto;
-    height:420px;
+    height: 420px;
     width: 630px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 0px;
 }
-.card-form-2{
+
+.card-form-2 {
     background-color: var(--color4);
     border: 3px solid var(--color4);
     border-radius: 10px;
@@ -158,13 +173,16 @@ h2{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 300px;;
-    width: 280px;
+    height: 320px;
+    ;
+    width: 300px;
     margin: 0px;
 }
-.form-crar-card-2-title{
+
+.form-crar-card-2-title {
     margin-bottom: 10px;
 }
+
 select {
     font-size: 1rem;
     border: 2px solid var(--color5);
@@ -173,6 +191,23 @@ select {
     color: var(--color5);
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+select::-webkit-scrollbar {
+    width: 6px;
+}
+
+select::-webkit-scrollbar-thumb {
+    background: var(--color5);
+    border-radius: 3px;
+}
+
+select::-webkit-scrollbar-track {
+    background: var(--color2);
+}
+
+.habilidad:disabled {
+    opacity: 0.5;
 }
 
 select:hover {
@@ -184,16 +219,18 @@ select:focus {
 }
 
 
-label{
-    color:var(--color5);
+label {
+    color: var(--color5);
     font-size: 1.1rem;
 }
-.input-form-crear::placeholder{
-color: var(--color5-alpha);
+
+.input-form-crear::placeholder {
+    color: var(--color5-alpha);
 }
-.input-form-crear-title{
+
+.input-form-crear-title {
     font-size: 1.2rem;
-    font-style:italic;
+    font-style: italic;
     outline: none;
     background: none;
     border: none;
@@ -202,18 +239,20 @@ color: var(--color5-alpha);
     padding: 4px;
 }
 
-.ast{
-    position:absolute;
+.ast {
+    position: absolute;
     padding-left: 6px;
     padding-top: 1px;
-    }
-.form-crear-firma{
+}
+
+.form-crear-firma {
     margin-top: auto;
     color: var(--color5);
 }
-.input-form-crear-name{
+
+.input-form-crear-name {
     font-size: 1rem;
-    font-style:italic;
+    font-style: italic;
     outline: none;
     background: none;
     border: none;
@@ -222,10 +261,11 @@ color: var(--color5-alpha);
     padding: 4px;
     width: 50%;
 }
-.input-form-crear-desc{
-    
+
+.input-form-crear-desc {
+
     font-size: 1rem;
-    font-style:italic;
+    font-style: italic;
     outline: none;
     background: none;
     border: none;
@@ -234,12 +274,14 @@ color: var(--color5-alpha);
     padding: 4px;
     overflow: hidden;
 }
-.form-control{
+
+.form-control {
     background: 0;
     border: 4px solid var(--color5);
     border-radius: 15px;
 }
-.pov{
+
+.pov {
     height: 100%;
     width: 100%;
     /* para que no se estire */
@@ -247,7 +289,8 @@ color: var(--color5-alpha);
     max-height: 200px;
     border-radius: 5px;
 }
-.map{
+
+.map {
     margin: 5px;
     border-radius: 50%;
     height: 150px;
@@ -259,32 +302,41 @@ color: var(--color5-alpha);
     transition: all .2s;
 }
 
-.card .title_num{
+.card .title_num {
     font-weight: bold;
-    color: rgb(39, 62, 71);;
+    color: rgb(39, 62, 71);
+    ;
     margin: 0px
 }
+
 .title_num:before {
     content: "#";
 }
-.card .title_map{
+
+.card .title_map {
     font-weight: bold;
-    color: rgb(39, 62, 71);;
+    color: rgb(39, 62, 71);
+    ;
     margin: 0px
 }
+
 .title_map:before {
     content: "// ";
-    }
-.title{
+}
+
+.title {
     margin: 5px;
 }
+
 .desc {
     /* que se justique bien el texto */
     text-align: justify;
 }
-h4{
+
+h4 {
     color: rgb(39, 62, 71);
 }
+
 .map:hover {
     transform: scale(2);
     opacity: 1;
@@ -296,11 +348,13 @@ h4{
     nav {
         gap: 10px;
     }
+
     .home-navbar {
         font-size: 2rem;
         margin-right: 0;
     }
-    .navbar-link{
+
+    .navbar-link {
         font-size: 1rem;
     }
 }
