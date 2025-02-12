@@ -1,0 +1,18 @@
+
+CREAR
+·mejorar el seleccionar archivos:
+ - que se muestre la preview.
+ - que este asi con el mapa arriba del pov.
+
+·poner para seleccionar habilidades según qué pj hayas seleccionado antes.
+
+·que si no pones nada en los lugares obligatiorios si le das a publicar te avise.
+
+·que la fecha sea la de ahora.
+
+·hacer una base de datos y llamarla para que se carguen los pjs, mapas y habilidades en vez de ponerlos uno x uno en los select.
+
+·que cuando le des a publicar se publique (eso ya es complicado tdv no).
+
+HABILIDADES
+·Poner un pop-up de filtros por Mapa, Agente, y habilidades (que se puedan seleccionar varios).
