@@ -24,26 +24,27 @@
         <a href="crear.html"><button type="button" class="btn btn-success">Crear</button></a>
     </nav>
 
-    <form class="form-crear">
+    <form class="form-crear" id="form-crear">
 
 
         <div class="card-form">
             <span class="ast" style="color: #A4243B;">*</span>
-            <input class="input-form-crear-title" type="text" placeholder="Título">
+            <input name="title" class="input-form-crear-title" type="text" placeholder="Título">
             <div>
                 <label><span style="color: #A4243B;">*</span>Foto del POV: </label>
-                <input type="file" accept="image/*" id="input-pov">
+                <input style="display: none;" type="file" name="pov-file" accept="image/*" id="input-pov">
+                <img id="pov-preview" style="display: none;" class="pov" src="" >
             </div>
             <div>
                 <label>Foto del mapa: </label>
-                <input type="file" accept="image/*" id="input-pov">
+                <input type="file" name="map-file" accept="image/*" id="input-map">
             </div>
             <textarea class="input-form-crear-desc" type="text" rows="3"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
             <div class="form-crear-firma">
                 <span class="ast" style="color: #A4243B;">*</span>
-                <input class="input-form-crear-name" type="text" placeholder="Tu nombre">
-                <span style="font-style:italic;">· 12/02/25</span>
+                <input id="nombre" name="nombre" class="input-form-crear-name" type="text" placeholder="Tu nombre">
+                <span style="font-style:italic;">· <span id="fecha-hoy"></span></span>
             </div>
         </div>
 
@@ -51,7 +52,7 @@
             <h4 class="form-crar-card-2-title">Última información</h4>
             <div>
                 <label>Mapa</label>
-                <select value="Mapa">
+                <select value="Mapa" name="mapa">
                     <option value="opcion1">Abyss</option>
                     <option value="opcion2">Ascent</option>
                     <option value="opcion3">Bind</option>
@@ -67,42 +68,62 @@
             </div>
             <div>
                 <label>Agente</label>
-                <select>
-                    <option value="opcion1">Astra</option>
-                    <option value="opcion2">Brimstone</option>
-                    <option value="opcion3">Breach</option>
-                    <option value="opcion4">Chamber</option>
-                    <option value="opcion5">Clove</option>
-                    <option value="opcion6">Cypher</option>
-                    <option value="opcion7">Deadlock</option>
-                    <option value="opcion8">Fade</option>
-                    <option value="opcion9">Gekko</option>
-                    <option value="opcion10">Harbor</option>
-                    <option value="opcion11">Iso</option>
-                    <option value="opcion12">Jett</option>
-                    <option value="opcion13">Kayo</option>
-                    <option value="opcion14">Killjoy</option>
-                    <option value="opcion15">Neon</option>
-                    <option value="opcion16">Omen</option>
-                    <option value="opcion17">Phoenix</option>
-                    <option value="opcion18">Raze</option>
-                    <option value="opcion19">Reyna</option>
-                    <option value="opcion20">Sage</option>
-                    <option value="opcion21">Skye</option>
-                    <option value="opcion22">Sova</option>
-                    <option value="opcion23">Tejo</option>
-                    <option value="opcion24">Viper</option>
-                    <option value="opcion25">Vyse</option>
-                    <option value="opcion26">Yoru</option>
+                <select id="agente" name="agente">
+                    <option value="">Elige un agente</option>
+                    <!-- <option value="astra">Astra</option>
+                    <option value="brimstone">Brimstone</option>
+                    <option value="breach">Breach</option>
+                    <option value="chamber">Chamber</option>
+                    <option value="clove">Clove</option>
+                    <option value="cypher">Cypher</option>
+                    <option value="deadlock">Deadlock</option>
+                    <option value="fade">Fade</option>
+                    <option value="gekko">Gekko</option>
+                    <option value="harbor">Harbor</option>
+                    <option value="iso">Iso</option>
+                    <option value="jett">Jett</option>
+                    <option value="kayo">Kayo</option>
+                    <option value="killjoy">Killjoy</option>
+                    <option value="neon">Neon</option>
+                    <option value="omen">Omen</option>
+                    <option value="phoenix">Phoenix</option>
+                    <option value="raze">Raze</option>
+                    <option value="reyna">Reyna</option>
+                    <option value="sage">Sage</option>
+                    <option value="skye">Skye</option>
+                    <option value="sova">Sova</option>
+                    <option value="tejo">Tejo</option>
+                    <option value="viper">Viper</option>
+                    <option value="vyse">Vyse</option>
+                    <option value="yoru">Yoru</option> -->
                 </select>
             </div>
             <div>
                 <label>Habilidad</label>
-                <select></select>
+                <select disabled id="habilidad" name="habilidad">
+                    <option value="">Elige una habilidad</option>
+                    <option value="viper">Viper</option>
+                    <option value="vyse">Vyse</option>
+                    <option value="yoru">Yoru</option>
+                </select>
             </div>
-            <button type="button" class="btn btn-light">Publicar</button>
+            <button class="btn btn-light">Publicar</button>
         </div>
     </form>
+    <div class="card-container">
+        <article class="card">
+            <p class="title">
+                <span class="title_num">4</span>
+                <span class="title_map">Stunt</span>
+            </p>
+            <img class="map" src="./images/split_4_stunt_map.png">
+            <img onclick="function1()" class="pov" src="./images/split_4_stunt_pov.png">
+            <p class="desc">Si ves en el minimapa que están pasando rampa, o si te callean que hay mucho ruido en main,
+                podés tirar este stunt para frenar el push a rampa y aún así stuntear a la gente que todavía está en
+                main. Después de tu stunt deberías callearle a tus compañeros que peekeen main</p>
+        </article>
+    </div>
+            <script src="crear.js"></script>
 </body>
 
 </html>
