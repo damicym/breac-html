@@ -16,9 +16,7 @@
 
 <body>
     <nav>
-        <a class="main_title" href="index.html">
-            <h1 class="home-navbar" style="color: rgb(189, 99, 47);">Breac-html</h1>
-        </a>
+        <a class="main_title" href="index.html"><h1 class="home-navbar" style="color: rgb(189, 99, 47);"><b>Breac-html</b></h1></a>
         <a class="navbar-link" href="index.html">Home</a>
         <a class="navbar-link" href="habilidades.html">Habilidades</a>
         <a style="text-decoration: underline;" class="navbar-link" href="crear.html">Crear</a>
@@ -29,7 +27,7 @@
 
         <div class="card-form">
             <span class="ast" style="color: #A4243B;">*</span>
-            <input name="title" class="input-form-crear-title" type="text" placeholder="Título" required>
+            <input autocomplete="off" name="title" class="input-form-crear-title" type="text" placeholder="Título" required>
                 <div class="div-input-pov">
                     <input type="file" name="input-pov" accept="image/*" id="input-pov" required>
                     <img onclick="function1()" style="border: 3px solid #273E47;  border-radius: 10px" id="pov-preview"
@@ -40,13 +38,13 @@
                     <img onclick="function2()" style="border: 3px solid #273E47; opacity: 1; transform: none;"
                         id="map-preview" src="./images/map-placeholder.png" class="map">
                 </div>
-            <textarea class="input-form-crear-desc" type="text" rows="3"
+            <textarea autocomplete="off" class="input-form-crear-desc" type="text" rows="6"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
             <div class="form-crear-firma">
                 <span class="ast" style="color: #A4243B;">*</span>
-                <input id="nombre" name="nombre" class="input-form-crear-name" type="text" placeholder="Tu nombre"
+                <input autocomplete="off" id="nombre" name="nombre" class="input-form-crear-name" type="text" placeholder="Tu nombre"
                     required>
-                <span style="font-style:italic;">· <span id="fecha-hoy"></span></span>
+                <span style="font-style:italic;">• <span id="fecha-hoy"></span></span>
             </div>
         </div>
 

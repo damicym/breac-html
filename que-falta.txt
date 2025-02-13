@@ -2,11 +2,8 @@
 ·que cuando le des a publicar:
 - se cargue la información de la card al local storage,
 - se publique,
-- y eliminar los imputs,
-- se muetsre un cartel de "publicado con exito".
-
-LOCAL STORAGE:
-·hacer una base de datos y llamarla para que se carguen los pjs, mapas y habilidades en vez de ponerlos uno x uno en los select.
+- se eliminen los imputs,
+- y se muetsre un cartel de "publicado con exito".
 
 HABILIDADES
 ·Poner un pop-up de filtros por Mapa, Agente, y habilidades (que se puedan seleccionar varios).

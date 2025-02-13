@@ -28,7 +28,7 @@ const mostrarFecha = () => {
         hour12: false
     }
 
-    const fechaHoy = new Date().toLocaleString('es-ES', opcionesfecha).replace(',', '')
+    const fechaHoy = new Date().toLocaleString('es-ES', opcionesfecha).replace(',', ' •')
     document.getElementById('fecha-hoy').innerHTML = fechaHoy
     
 }
@@ -54,24 +54,6 @@ function uncapitalize(str){
     return str.charAt(0).toLowerCase() + str.slice(1);
 
 }
-
-// document.getElementById('agente').addEventListener('change', event => {
-//     localStorage.setItem('test', JSON.stringify(agentes))
-//     const indice = agentes.findIndex(obj => obj.toLowerCase(event.target.value) === agenteSeleccionado);
-
-//     let opcion1 = `<option value="${agentes[indice].h1}">${capitalizeFirstLetter(agentes[indice].h1)}</option>`
-//     document.getElementById('habilidad').innerHTML += opcion1
-//     let opcion2 = `<option value="${agentes[indice].h2}">${capitalizeFirstLetter(agentes[indice].h2)}</option>`
-//     document.getElementById('habilidad').innerHTML += opcion2
-//     let opcion3 = `<option value="${agentes[indice].h3}">${capitalizeFirstLetter(agentes[indice].h3)}</option>`
-//     document.getElementById('habilidad').innerHTML += opcion3
-//     let opcion4 = `<option value="${agentes[indice].h4}">${capitalizeFirstLetter(agentes[indice].h4)}</option>`
-//     document.getElementById('habilidad').innerHTML += opcion4
-//     if (h5) {
-//         let opcion5 = `<option value="${agente.h5}">${capitalizeFirstLetter(agente.h5)}</option>`
-//         document.getElementById('habilidad').innerHTML += opcion5
-//     }
-// })
 
 document.getElementById('agente').addEventListener('change', event => {
     const agenteSeleccionado = event.target.value;
