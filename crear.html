@@ -21,7 +21,7 @@
         </a>
         <a class="navbar-link" href="index.html">Home</a>
         <a class="navbar-link" href="habilidades.html">Habilidades</a>
-        <a href="crear.html"><button type="button" class="btn btn-success">Crear</button></a>
+        <a style="text-decoration: underline;" class="navbar-link" href="crear.html">Crear</a>
     </nav>
 
     <form class="form-crear" id="form-crear">
@@ -30,15 +30,16 @@
         <div class="card-form">
             <span class="ast" style="color: #A4243B;">*</span>
             <input name="title" class="input-form-crear-title" type="text" placeholder="Título" required>
-            <div>
-                <input style="display: none;" type="file" name="pov-file" accept="image/*" id="input-pov" required>
-                <img onclick="function1()" style="border: 3px solid #273E47;  border-radius: 10px" id="pov-preview"
-                    src="./images/pov-placeholder.png" class="pov">
-            </div>
-            <div>
-                <label>Foto del mapa: </label>
-                <input type="file" name="map-file" accept="image/*" id="input-map">
-            </div>
+                <div class="div-input-pov">
+                    <input type="file" name="input-pov" accept="image/*" id="input-pov" required>
+                    <img onclick="function1()" style="border: 3px solid #273E47;  border-radius: 10px" id="pov-preview"
+                        src="./images/pov-placeholder.png" class="pov">
+                </div>
+                <div>
+                    <input style="display: none;" type="file" name="map-file" accept="image/*" id="input-map">
+                    <img onclick="function2()" style="border: 3px solid #273E47; opacity: 1; transform: none;"
+                        id="map-preview" src="./images/map-placeholder.png" class="map">
+                </div>
             <textarea class="input-form-crear-desc" type="text" rows="3"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
             <div class="form-crear-firma">
@@ -86,6 +87,7 @@
             <button class="btn btn-light">Publicar</button>
         </div>
     </form>
+
     <script src="crear.js"></script>
 </body>
 
