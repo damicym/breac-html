@@ -208,11 +208,12 @@ select::-webkit-scrollbar-track {
 .habilidad:disabled {
     opacity: 0.5;
 }
-
 select:hover {
-    border-color: var(--color2);
+    border-color: #D8C99B;
 }
-
+select:disabled:hover {
+    border-color: var(--color5);
+}
 select:focus {
     outline: none;
 }
@@ -242,6 +243,7 @@ label {
     position: absolute;
     padding-left: 6px;
     padding-top: 1px;
+    color: #A4243B
 }
 
 .form-crear-firma {
@@ -348,21 +350,32 @@ label {
 h4 {
     color: rgb(39, 62, 71);
 }
-
+.mi-toast {
+    background-color: var(--color4);
+}
+.mi-button{
+    color: var(--color2);
+}
 .map:hover {
     transform: scale(2);
     opacity: 1;
     border-width: 1.5px;
     transition: all .3s;
 }
-
+.toast-body{
+    color: var(--color5);
+    font-size: 1.1rem;
+}
+.d-flex{
+    color: var(--color5);
+}
 @media screen and (max-width: 720px) {
     nav {
         gap: 10px;
     }
 
     .home-navbar {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-right: 0;
     }
 
@@ -373,6 +386,6 @@ h4 {
 
 @media screen and (max-width: 400px) {
     .home-navbar {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }

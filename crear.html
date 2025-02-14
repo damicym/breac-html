@@ -16,7 +16,9 @@
 
 <body>
     <nav>
-        <a class="main_title" href="index.html"><h1 class="home-navbar" style="color: rgb(189, 99, 47);"><b>Breac-html</b></h1></a>
+        <a class="main_title" href="index.html">
+            <h1 class="home-navbar" style="color: rgb(189, 99, 47);"><b>Breac-html</b></h1>
+        </a>
         <a class="navbar-link" href="index.html">Home</a>
         <a class="navbar-link" href="habilidades.html">Habilidades</a>
         <a style="text-decoration: underline;" class="navbar-link" href="crear.html">Crear</a>
@@ -26,26 +28,27 @@
 
 
         <div class="card-form">
-            <span class="ast" style="color: #A4243B;">*</span>
-            <input autocomplete="off" name="title" id="title" class="input-form-crear-title" type="text" placeholder="Título" required>
-                <div>
-                    <div class="div-input-pov">
-                        <input type="file" name="input-pov" accept="image/*" id="input-pov" required>
-                        <img onclick="function1()" style="border: 3px solid #273E47;  border-radius: 10px" id="pov-preview"
-                            src="./images/pov-placeholder.png" class="pov">
-                    </div>
-                    <div>
-                        <input style="display: none;" type="file" name="map-file" accept="image/*" id="input-map">
-                        <img onclick="function2()" style="border: 3px solid #273E47; opacity: 1; transform: none;"
-                            id="map-preview" src="./images/map-placeholder.png" class="map">
-                    </div>
+            <span class="ast"><b>*</b></span>
+            <input autocomplete="off" name="title" id="title" class="input-form-crear-title" type="text"
+                placeholder="Título" required>
+            <div>
+                <div class="div-input-pov">
+                    <input type="file" name="input-pov" accept="image/*" id="input-pov" required>
+                    <img onclick="function1()" style="border: 10px solid #273E47;  border-radius: 10px" id="pov-preview"
+                        src="./images/pov-placeholder.png" class="pov">
                 </div>
+                <div>
+                    <input style="display: none;" type="file" name="map-file" accept="image/*" id="input-map">
+                    <img onclick="function2()" style="border: 3px solid #D8973C; opacity: 1; transform: none;"
+                        id="map-preview" src="./images/map-placeholder.png" class="map">
+                </div>
+            </div>
             <textarea autocomplete="off" class="input-form-crear-desc" type="text" rows="7"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
             <div class="form-crear-firma">
-                <span class="ast" style="color: #A4243B;">*</span>
-                <input autocomplete="off" id="nombre" name="nombre" class="input-form-crear-name" type="text" placeholder="Tu nombre"
-                    required>
+                <span class="ast"><b>*</b></span>
+                <input autocomplete="off" id="nombre" name="nombre" class="input-form-crear-name" type="text"
+                    placeholder="Tu nombre" required>
                 <span style="font-style:italic;">• <span id="fecha-hoy"></span></span>
             </div>
         </div>
@@ -84,7 +87,14 @@
             <button class="btn btn-light">Publicar</button>
         </div>
     </form>
-
+    
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center mi-toast border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            ¡Artículo publicado exitosamente!
+      </div>
+    </div>
     <script src="crear.js"></script>
 </body>
 

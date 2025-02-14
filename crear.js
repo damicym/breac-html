@@ -60,7 +60,7 @@ document.getElementById('agente').addEventListener('change', event => {
     const indice = agentes.findIndex(obj => obj.nombre === agenteSeleccionado)
     const agente = agentes[indice]
 
-    
+
     selectHabilidad.innerHTML = ""
 
     selectHabilidad.insertAdjacentHTML('beforeend', '<option value="">Elige una habilidad</option>')
@@ -84,7 +84,7 @@ document.getElementById('agente').addEventListener('change', event => {
 
 
 document.getElementById("input-pov").addEventListener('input', event => {
-    
+
     const povFileInput = event.target
     const povFile = povFileInput.files[0]
     if (povFile) {
@@ -93,14 +93,14 @@ document.getElementById("input-pov").addEventListener('input', event => {
     }
     else {
         povPreview.src = "./images/pov-placeholder.png"
-        povPreview.style.border = "3px solid #273E47"
+        povPreview.style.border = "10px solid #273E47"
         povPreview.style.borderRadius = "10px"
     }
     povPreview.src = URL.createObjectURL(povFile)
 })
 
 document.getElementById("input-map").addEventListener('input', event => {
-    
+
     const mapFileInput = event.target
     const mapFile = mapFileInput.files[0]
     if (mapFile) {
@@ -109,30 +109,30 @@ document.getElementById("input-map").addEventListener('input', event => {
     }
     else {
         mapPreview.src = "./images/map-placeholder.png"
-        mapPreview.style.border = "3px solid #273E47"
+        mapPreview.style.border = "3px solid #D8973C"
         mapPreview.style.opacity = "1"
     }
     mapPreview.src = URL.createObjectURL(mapFile)
 })
 
 document.getElementById('agente').addEventListener('change', event => {
-    
+
     inputHabilidad.disabled = !event.target.value
     if (!event.target.value) inputHabilidad.value = ""
 })
 function resetPreviewPov() {
-    
+
     povPreview.src = "./images/pov-placeholder.png"
-    povPreview.style.border = "3px solid #273E47"
+    povPreview.style.border = "10px solid #273E47"
     povPreview.style.borderRadius = "10px"
 }
 function resetPreviewMap() {
-    
+
     mapPreview.src = "./images/map-placeholder.png"
-    mapPreview.style.border = "3px solid #273E47"
+    mapPreview.style.border = "3px solid #D8973C"
     mapPreview.style.opacity = "1"
 }
-function resetHabilidad(){
+function resetHabilidad() {
     inputHabilidad.disabled = true
     inputHabilidad.value = ""
 }
@@ -150,7 +150,12 @@ formCrear.addEventListener('submit', event => {
     const formObject = Object.fromEntries(formData.entries())
     const keysArray = [...formData.keys()]
     vaciarInput(keysArray)
-    
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    toastBootstrap.show()
+
     //localStorage.setItem('form', JSON.stringify(formObject))
-    // para el script de habilidades let titulo = formData.get('title')
+    // para el script de habilidades: let titulo = formData.get('title')
 })
+
