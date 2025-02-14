@@ -1,10 +1,20 @@
+1º probar q funcione con json (verificar q la key sea el mismo que el nombre del input)
+2º cargarlas con localStorage
 
 ·que cuando le des a publicar:
-- se cargue la información de la card al local storage,
-- se publique,
 - se eliminen los imputs,
-- y se muetsre un cartel de "publicado con exito".
+- se muetsre un cartel de "publicado con exito".
+
+subir formObject al localStorage
+acceder desde habilidades al storage con un get item de formObject
+crear una car en base a lo que me diga el storage
+
+generar todas las cards a partit de json (cards.json) y borrar el html
 
 HABILIDADES
 ·Poner un pop-up de filtros por Mapa, Agente, y habilidades (que se puedan seleccionar varios).
+
+
+
+
 
