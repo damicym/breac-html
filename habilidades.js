@@ -8,6 +8,11 @@
 //objetivo: que queden todas las cards enumeradas y divididas por agente
 //1. recorrer cards segun su agente
 //2. agregarlas en el momento a un nuevo container para el agente
+
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1)
+}
+
 const maxContainer = document.getElementById("maxContainer")
 
 
@@ -24,11 +29,11 @@ fetch('data/agentes.json')
                     if (agenteCards.length > 0) {
                         maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
                             <div class="card-container" id="${agente.nombre}-container"></div>`
-                        const agenteContainer = document.getElementById("${agente.nombre}-container")
-                        agenteCards.map(card => {
+                        const agenteContainer = document.getElementById(`${agente.nombre}-container`)
+                        agenteCards.map((card, index) => {
                             let cardHtml = `<article class="card">
                                             <p class="title">
-                                                <span class="title-num">${num}</span>
+                                                <span class="title-num">${index + 1}</span>
                                                 <span class="title-text">${card.titleText}</span>
                                             </p>
                                             <img class="map" src="${card.mapSrc}">
@@ -40,7 +45,6 @@ fetch('data/agentes.json')
                                            </div>
                                         </article>`
                             agenteContainer.innerHTML += cardHtml
-                            num++
                         })
                     }
                 })

@@ -1,6 +1,5 @@
 [
     {
-        "titleNum": "1",
         "titleText": "Matar al de cuerdas",
         "mapSrc": "./images/split_1_aft_map.png",
         "povSrc": "./images/split_1_aft_pov.png",
@@ -12,7 +11,6 @@
         "habilidad": "aftershock"
     },
     {
-        "titleNum": "2",
         "titleText": "Aftershock a la skye",
         "mapSrc": "./images/split_2_aft_map.png",
         "povSrc": "./images/split_2_aft_pov.png",
@@ -24,7 +22,6 @@
         "habilidad": "aftershock"
     },
     {
-        "titleNum": "3",
         "titleText": "Rush rampa",
         "mapSrc": "./images/split_3_flash_map.png",
         "povSrc": "./images/split_3_flash_pov.png",
@@ -36,7 +33,6 @@
         "habilidad": "flash"
     },
     {
-        "titleNum": "4",
         "titleText": "Stronholdear main de A split",
         "mapSrc": "./images/split_4_stunt_map.png",
         "povSrc": "./images/split_4_stunt_pov.png",
@@ -48,7 +44,6 @@
         "habilidad": "stunt"
     },
     {
-        "titleNum": "1",
         "titleText": "Agresiva main de B abyss",
         "mapSrc": "./images/abyss_1_stunt_map.png",
         "povSrc": "./images/abyss_1_stunt_pov.png",
@@ -60,7 +55,6 @@
         "habilidad": "stunt"
     },
     {
-        "titleNum": "2",
         "titleText": "Flash para entry A abyss",
         "mapSrc": "./images/abyss_2_flash_map.png",
         "povSrc": "./images/abyss_2_flash_pov.png",
@@ -72,7 +66,6 @@
         "habilidad": "flash"
     },
     {
-        "titleNum": "1",
         "titleText": "Aftershock a la op",
         "mapSrc": "./images/heaven_1_aft_map.png",
         "povSrc": "./images/heaven_1_aft_pov.png",
@@ -84,7 +77,6 @@
         "habilidad": "aftershock"
     },
     {
-        "titleNum": "2",
         "titleText": "Correr corta inicio de ronda",
         "mapSrc": "./images/heaven_2_stunt_map.png",
         "povSrc": "./images/heaven_2_stunt_pov.png",
@@ -96,7 +88,6 @@
         "habilidad": "stunt"
     },
     {
-        "titleNum": "3",
         "titleText": "Aftershock al sova",
         "mapSrc": "./images/heaven_3_aft_map.png",
         "povSrc": "./images/heaven_3_aft_pov.png",
