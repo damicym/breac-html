@@ -1,7 +1,5 @@
-//1º generar todas las cards a partit de json (cards.json)
-//preguntarle a axel que significa: (verificar q la key sea el mismo que el nombre del input)
-//2º cargarlas con localStorage
 - subir formObject al localStorage.
+*tenes que sumarle a agentes card todos los elementos del local storage asi se aparecen los de tu json y los del local storage
 
 acceder desde habilidades al storage con un get item de formObject
 crear una car en base a lo que me diga el storage
@@ -14,3 +12,5 @@ HABILIDADES
 
 GENERAL-DISEÑO
 cambiar algunos textos pq ya no solo seria de breach la pagina, sino un lugar publico donde compartir tus habilidades
+
+

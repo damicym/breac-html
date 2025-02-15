@@ -33,23 +33,23 @@
                 placeholder="Título" required>
             <div>
                 <div class="div-input-pov">
-                    <input type="file" name="input-pov" accept="image/*" id="input-pov" required>
+                    <input type="file" name="povSrc" accept="image/*" id="input-pov" required>
                     <img onclick="function1()" style="border: 10px solid #273E47;  border-radius: 10px" id="pov-preview"
                         src="./images/pov-placeholder.png" class="pov">
                 </div>
                 <div>
-                    <input style="display: none;" type="file" name="map-file" accept="image/*" id="input-map">
+                    <input style="display: none;" type="file" name="mapSrc" accept="image/*" id="input-map">
                     <img onclick="function2()" style="border: 3px solid #D8973C; opacity: 1; transform: none;"
                         id="map-preview" src="./images/map-placeholder.png" class="map">
                 </div>
             </div>
-            <textarea autocomplete="off" class="input-form-crear-desc" type="text" rows="7"
+            <textarea name="desc" autocomplete="off" class="input-form-crear-desc" type="text" rows="7"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
             <div class="form-crear-firma">
                 <span class="ast"><b>*</b></span>
                 <input autocomplete="off" id="nombre" name="nombre" class="input-form-crear-name" type="text"
                     placeholder="Tu nombre" required>
-                <span style="font-style:italic;">• <span id="fecha-hoy"></span></span>
+                <span name="fecha" style="font-style:italic;">• <span id="fecha-hoy"></span></span>
             </div>
         </div>
 
