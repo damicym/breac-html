@@ -1,16 +1,5 @@
-- subir formObject al localStorage.
-*tenes que sumarle a agentes card todos los elementos del local storage asi se aparecen los de tu json y los del local storage
-
-acceder desde habilidades al storage con un get item de formObject
-crear una car en base a lo que me diga el storage
-
+*guardar el local storage en vez de reemplzar cada vez que hago una card nueva
 
 HABILIDADES 
 ·Poner un pop-up de filtros por Mapa, Agente, autor, y habilidades (que se puedan seleccionar varios).
 ·tambien poder elegir si ordenar por habilidad, fecha, autor, mapa
- (para ello, ver si le pongo la info extra a las cards en class o en algun lugar // o de otra forma, no se como es)
-
-GENERAL-DISEÑO
-cambiar algunos textos pq ya no solo seria de breach la pagina, sino un lugar publico donde compartir tus habilidades
-
-

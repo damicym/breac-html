@@ -5,6 +5,7 @@ const mapPreview = document.getElementById('map-preview')
 const inputHabilidad = document.getElementById('habilidad')
 const formCrear = document.getElementById('form-crear')
 
+
 function function1() {
     document.getElementById('input-pov').click()
 }
@@ -35,6 +36,7 @@ const mostrarFecha = () => {
 }
 
 mostrarFecha()
+setInterval(mostrarFecha, 60000)
 
 fetch('data/agentes.json')
     .then(data => data.json())
@@ -47,8 +49,6 @@ fetch('data/agentes.json')
         })
     })
 
-// JSON.stringify(dataEnJSON) --> Devuelve un string
-// JSON.parse(string) --> Devuelve un JSON
 
 function uncapitalize(str) {
     return str.charAt(0).toLowerCase() + str.slice(1)
@@ -148,14 +148,43 @@ formCrear.addEventListener('submit', event => {
     event.preventDefault()
     const formData = new FormData(event.target)
     const formObject = Object.fromEntries(formData.entries())
+
+    const opcionesfecha = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    };
+    const fechaHoy = new Date().toLocaleString('es-ES', opcionesfecha).replace(',', ' •')
+
+    formObject.fecha = fechaHoy
+    if(formObject.povSrc){
+        let reader = new FileReader();
+        reader.readAsDataURL(formObject.povSrc)
+        reader.onload = () => {
+            formObject.povSrc = reader.result
+            //localStorage.setItem('form', JSON.stringify(formObject)) //se hace dsps del reader.result
+        }
+    }
+    if(formObject.mapSrc){
+        let reader = new FileReader();
+        reader.readAsDataURL(formObject.mapSrc)
+        reader.onload = () => {
+            formObject.mapSrc = reader.result
+           // localStorage.setItem('form', JSON.stringify(formObject))
+        } 
+        
+    }
     const keysArray = [...formData.keys()]
     vaciarInput(keysArray)
+
     const toastTrigger = document.getElementById('liveToastBtn')
     const toastLiveExample = document.getElementById('liveToast')
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     toastBootstrap.show()
-
-    //localStorage.setItem('form', JSON.stringify(formObject))
-    // para el script de habilidades: let titulo = formData.get('title')
+    localStorage.setItem('form', JSON.stringify(formObject))
+    
 })
 

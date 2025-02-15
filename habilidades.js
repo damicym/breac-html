@@ -1,6 +1,5 @@
 //dividir en secciones según el agente (con un boton de mostrar todo)
 
-
 //mis elementos:
 // const breachContainer = document.getElementById("breach-container")
 // const cypherContainer = document.getElementById("cypher-container")
@@ -15,6 +14,9 @@ function capitalizeFirstLetter(val) {
 
 const maxContainer = document.getElementById("maxContainer")
 
+// JSON.stringify(dataEnJSON) --> Devuelve un string
+// JSON.parse(string) --> Devuelve un JSON
+
 
 fetch('data/agentes.json')
     .then(data => data.json())
@@ -23,7 +25,9 @@ fetch('data/agentes.json')
         fetch('data/cards.json')
             .then(data => data.json())
             .then(data => {
-                cards = data
+                let localData = JSON.parse(localStorage.getItem('form')) || []
+                cards = [...data, localData]
+                // cards = data + JSON.parse(localStorage.getItem('form'))
                 agentes.map(agente => {
                     const agenteCards = cards.filter(card => card.agente === agente.nombre)
                     if (agenteCards.length > 0) {
