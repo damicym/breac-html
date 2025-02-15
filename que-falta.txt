@@ -1,12 +1,16 @@
-1º probar q funcione con json (verificar q la key sea el mismo que el nombre del input)
-2º cargarlas con localStorage
-
+//1º generar todas las cards a partit de json (cards.json)
+//preguntarle a axel que significa: (verificar q la key sea el mismo que el nombre del input)
+//2º cargarlas con localStorage
 - subir formObject al localStorage.
 
 acceder desde habilidades al storage con un get item de formObject
 crear una car en base a lo que me diga el storage
 
-generar todas las cards a partit de json (cards.json) y borrar el html
 
-HABILIDADES
-·Poner un pop-up de filtros por Mapa, Agente, y habilidades (que se puedan seleccionar varios).
+HABILIDADES 
+·Poner un pop-up de filtros por Mapa, Agente, autor, y habilidades (que se puedan seleccionar varios).
+·tambien poder elegir si ordenar por habilidad, fecha, autor, mapa
+ (para ello, ver si le pongo la info extra a las cards en class o en algun lugar // o de otra forma, no se como es)
+
+GENERAL-DISEÑO
+cambiar algunos textos pq ya no solo seria de breach la pagina, sino un lugar publico donde compartir tus habilidades

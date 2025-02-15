@@ -245,9 +245,13 @@ label {
     padding-top: 1px;
     color: #A4243B
 }
-
+.firma{
+    color: var(--color5);
+    position: absolute;
+    bottom: 2px;
+    font-style: italic;
+}
 .form-crear-firma {
-    margin-top: auto;
     color: var(--color5);
 }
 
@@ -316,25 +320,24 @@ label {
     object-fit: cover;
 }
 
-.card .title_num {
+.card .title-num {
     font-weight: bold;
     color: rgb(39, 62, 71);
-    ;
-    margin: 0px
+    margin: 0px;
 }
 
-.title_num:before {
+.title-num:before {
     content: "#";
 }
 
-.card .title_map {
+.card .title-text {
     font-weight: bold;
     color: rgb(39, 62, 71);
     ;
     margin: 0px
 }
 
-.title_map:before {
+.title-text:before {
     content: "// ";
 }
 
@@ -343,8 +346,9 @@ label {
 }
 
 .desc {
-    /* que se justique bien el texto */
+    margin-bottom: 25px;
     text-align: justify;
+    
 }
 
 h4 {
