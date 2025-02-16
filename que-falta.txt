@@ -1,8 +1,11 @@
-HABILIDADES 
-·Poner un pop-up de filtros por Mapa, Agente, autor, y habilidades (que se puedan seleccionar varios).
-·tambien poder elegir si ordenar por habilidad, fecha, autor, mapa
+HABILIDADES
+·Filtros
+·Ordenar por habilidad, fecha, autor, mapa
+responsive filters
+cambiar el estilo del checkbox
 
-hacer array form de forms para el localStorage (  [...data ...Json.parse('form')]  )
+opcional: hacer array form de forms para el localStorage (  [...data ...Json.parse('form')]  )
 
 OTROS
+responsive nav 
 animaciones
