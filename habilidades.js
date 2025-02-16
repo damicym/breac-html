@@ -17,11 +17,10 @@ const maxContainer = document.getElementById("maxContainer")
 // JSON.stringify(dataEnJSON) --> Devuelve un string
 // JSON.parse(string) --> Devuelve un JSON
 
-
 fetch('data/agentes.json')
     .then(data => data.json())
     .then(data => {
-        agentes = data
+        var agentes = data
         fetch('data/cards.json')
             .then(data => data.json())
             .then(data => {
@@ -33,10 +32,10 @@ fetch('data/agentes.json')
                         localData.push(formData)
                     }
                 }
-                cards = [...data, ...localData]
+                var allCards = [...data, ...localData]
                 // cards = data + JSON.parse(localStorage.getItem('form'))
                 agentes.map(agente => {
-                    const agenteCards = cards.filter(card => card.agente === agente.nombre)
+                    const agenteCards = allCards.filter(card => card.agente === agente.nombre)
                     if (agenteCards.length > 0) {
                         maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
                             <div class="card-container" id="${agente.nombre}-container"></div>`
