@@ -406,9 +406,13 @@ h4 {
 }
 
 @media screen and (max-width: 450px) {
+    .card-container{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
     .card{
-        min-width: 100%;
-        max-width: 100%;
+        min-width: 90%;
+        max-width: 90%;
         padding-bottom: 55px;
     }
 }
