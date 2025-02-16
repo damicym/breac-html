@@ -184,7 +184,9 @@ formCrear.addEventListener('submit', event => {
     const toastLiveExample = document.getElementById('liveToast')
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     toastBootstrap.show()
-    localStorage.setItem('form', JSON.stringify(formObject))
-    
+    //si no tengo nada, ageragr 1 form
+    //si ya tengo uno, cambiar 'form' a 'form1'
+    const storageLength = localStorage.length
+    localStorage.setItem(`form${storageLength +  1}`, JSON.stringify(formObject))
 })
 

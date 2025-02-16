@@ -1,5 +1,3 @@
-*guardar el local storage en vez de reemplzar cada vez que hago una card nueva
-
 HABILIDADES 
 ·Poner un pop-up de filtros por Mapa, Agente, autor, y habilidades (que se puedan seleccionar varios).
 ·tambien poder elegir si ordenar por habilidad, fecha, autor, mapa

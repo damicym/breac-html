@@ -25,8 +25,15 @@ fetch('data/agentes.json')
         fetch('data/cards.json')
             .then(data => data.json())
             .then(data => {
-                let localData = JSON.parse(localStorage.getItem('form')) || []
-                cards = [...data, localData]
+                let localData = []
+                for (let index = 0; index < localStorage.length; index++) {
+                    let key = localStorage.key(index)
+                    if (key.startsWith("form")) { 
+                        let formData = JSON.parse(localStorage.getItem(key)) || []
+                        localData.push(formData)
+                    }
+                }
+                cards = [...data, ...localData]
                 // cards = data + JSON.parse(localStorage.getItem('form'))
                 agentes.map(agente => {
                     const agenteCards = cards.filter(card => card.agente === agente.nombre)
