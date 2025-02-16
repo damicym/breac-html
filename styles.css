@@ -137,6 +137,7 @@ h2 {
     flex: 1;
     min-width: 400px;
     max-width: 600px;
+    
 }
 
 .form-crear {
@@ -202,6 +203,16 @@ select::-webkit-scrollbar-thumb {
 select::-webkit-scrollbar-track {
     background: var(--color2);
 }
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--color4);
+}
+body::-webkit-scrollbar-track {
+    background: var(--color2);
+}
 .habilidad:disabled {
     opacity: 0.5;
 }
@@ -239,18 +250,17 @@ label {
     border-radius: 10px;
     padding: 4px;
 }
-
 .ast {
     position: absolute;
     padding-left: 6px;
     padding-top: 1px;
-    color: #A4243B
+    color: #A4243B;
 }
 .firma{
     color: var(--color5);
+    font-style: italic;
     position: absolute;
     bottom: 2px;
-    font-style: italic;
 }
 .form-crear-firma {
     color: var(--color5);
@@ -392,5 +402,13 @@ h4 {
 @media screen and (max-width: 400px) {
     .home-navbar {
         font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card{
+        min-width: 100%;
+        max-width: 100%;
+        padding-bottom: 55px;
     }
 }
