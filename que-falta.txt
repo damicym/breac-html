@@ -1,8 +1,8 @@
 HABILIDADES
 ·Filtros
-·Ordenar por habilidad, fecha, autor, mapa
-responsive filters
-cambiar el estilo del checkbox
+que se pueda mandar y recibir a tiempo real (autor sin case-sensitive)
+responsive filters (el checkbox tampoco es responsive xd)
+·Orden
 
 opcional: hacer array form de forms para el localStorage (  [...data ...Json.parse('form')]  )
 

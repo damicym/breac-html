@@ -399,14 +399,38 @@ h4 {
 .input-form-hb::placeholder{
     color: var(--color3);
 }
+.ordenar-container{
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    width: 120px;
+    background-color: var(--color5);
+    height: 30px;
+    border: 5px solid var(--color5);
+    border-radius: 8px;
+    justify-content: center;
+}
 .filter-container{
     display: flex;
     flex-direction:row;
     gap: 10px;
-    width: 950px;
+    width: 765px;
     background-color: var(--color5);
     height: 30px;
     border: 5px solid var(--color5);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.search-container{
+    display: flex;
+    flex-direction:row;
+    gap: 10px;
+    width: 230px;
+    background-color: var(--color5);
+    height: 30px;
+    border: 5px solid var(--color5);
+    border-radius: 8px;
+    padding-left: 5px;
 }
 .filter-label{
     margin-right: 10px;
@@ -438,7 +462,8 @@ h4 {
 .max-filter-container{
     display: flex;
     flex-direction:row;
-    gap: 0;
+    gap: 10px;
+    max-width: 90%;
 }
 @media screen and (max-width: 720px) {
     nav {
@@ -496,7 +521,7 @@ input[type="checkbox"]:checked + .custom-checkbox {
     background-color: #D8C99B;
     border-color: var(--color2);
 }
-input[type="checkbox"]:checked + .custom-checkbox::after {
+input[type="checkbox"]:checked ~ .custom-checkbox::after {
     content: "✔";
     color: var(--color4);
     font-size: 16px;

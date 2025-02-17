@@ -20,6 +20,8 @@ const maxContainer = document.getElementById("maxContainer")
 //filtros:
 //1. guardar en el localstorage los filtros mapas = [], agente, habilidad, autor
 //2. generar las cards filtradas
+//el boton de icon tiene que vaciar los inputs
+// si un input está vacío y haces submit, deberia estar como por default
 fetch('data/agentes.json')
     .then(data => data.json())
     .then(data => {
