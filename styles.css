@@ -138,7 +138,7 @@ h2 {
     flex: 1;
     min-width: 400px;
     max-width: 600px;
-    
+
 }
 
 .form-crear {
@@ -180,9 +180,24 @@ h2 {
     margin: 0px;
 }
 
+.no-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.borrar-filtros-text {
+    color: rgb(89, 23, 151);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+}
+
 .form-crar-card-2-title {
     margin-bottom: 10px;
 }
+
 select {
     font-size: 1rem;
     border: 2px solid var(--color5);
@@ -190,16 +205,19 @@ select {
     background-color: var(--color2);
     color: var(--color5);
     cursor: pointer;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     outline: none;
 }
+
 select::-webkit-scrollbar {
     width: 6px;
 }
+
 select::-webkit-scrollbar-thumb {
     background: var(--color5);
     border-radius: 3px;
 }
+
 select::-webkit-scrollbar-track {
     background: var(--color2);
 }
@@ -207,15 +225,23 @@ select::-webkit-scrollbar-track {
 body::-webkit-scrollbar {
     width: 15px;
 }
+
 body::-webkit-scrollbar-thumb {
     background: var(--color4);
 }
+
 body::-webkit-scrollbar-track {
     background: var(--color2);
 }
+
 .habilidad:disabled {
     opacity: 0.5;
 }
+
+select:disabled {
+    cursor: auto;
+}
+
 /* select:disabled:hover {
     border-color: var(--color5);
 } */
@@ -250,18 +276,21 @@ label {
     border-radius: 10px;
     padding: 4px;
 }
+
 .ast {
     position: absolute;
     padding-left: 6px;
     padding-top: 1px;
     color: #A4243B;
 }
-.firma{
+
+.firma {
     color: var(--color5);
     font-style: italic;
     position: absolute;
     bottom: 2px;
 }
+
 .form-crear-firma {
     color: var(--color5);
 }
@@ -296,15 +325,18 @@ label {
     border: 4px solid var(--color5);
     border-radius: 15px;
 }
-.div-input-pov{
+
+.div-input-pov {
     position: relative;
 }
-#input-pov{
+
+#input-pov {
     opacity: 0;
     position: absolute;
     bottom: 0px;
     margin-left: 29%;
 }
+
 .pov {
     height: 100%;
     width: 100%;
@@ -314,9 +346,11 @@ label {
     border-radius: 5px;
     z-index: 10;
 }
-#map-preview{
+
+#map-preview {
     top: 65px;
 }
+
 .map {
     margin: 5px;
     border-radius: 50%;
@@ -359,32 +393,38 @@ label {
 .desc {
     margin-bottom: 25px;
     text-align: justify;
-    
+
 }
 
 h4 {
     color: rgb(39, 62, 71);
 }
+
 .mi-toast {
     background-color: var(--color4);
 }
-.mi-button{
+
+.mi-button {
     color: var(--color2);
 }
+
 .map:hover {
     transform: scale(2);
     opacity: 1;
     border-width: 1.5px;
     transition: all .3s;
 }
-.toast-body{
+
+.toast-body {
     color: var(--color5);
     font-size: 1.1rem;
 }
-.d-flex{
+
+.d-flex {
     color: var(--color5);
 }
-.input-form-hb{
+
+.input-form-hb {
     font-size: 1.2rem;
     font-style: italic;
     outline: none;
@@ -396,23 +436,26 @@ h4 {
     color: var(--color2);
     width: 150px;
 }
-.input-form-hb::placeholder{
+
+.input-form-hb::placeholder {
     color: var(--color3);
 }
-.ordenar-container{
+
+.ordenar-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     gap: 10px;
-    width: 120px;
+    width: 220px;
     background-color: var(--color5);
     height: 30px;
     border: 5px solid var(--color5);
     border-radius: 8px;
     justify-content: center;
 }
-.filter-container{
+
+.filter-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     gap: 10px;
     width: 765px;
     background-color: var(--color5);
@@ -421,24 +464,36 @@ h4 {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-.search-container{
+
+.search-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     gap: 10px;
-    width: 230px;
+    width: 260px;
     background-color: var(--color5);
     height: 30px;
     border: 5px solid var(--color5);
     border-radius: 8px;
     padding-left: 5px;
 }
-.filter-label{
+
+.filter-label {
     margin-right: 10px;
     font-size: 1.5rem;
     color: var(--color2);
     font-weight: bold;
+    user-select: none;
 }
-.submit-filter-button{
+
+.vaciar-autor-button {
+    border: 2px solid var(--color2);
+    color: var(--color2);
+    background-color: var(--color5);
+    border-radius: 30px;
+    position: absolute;
+}
+
+.submit-filter-button {
     border: 4px solid var(--color4);
     border-radius: 8px;
     border-top-left-radius: 0;
@@ -448,7 +503,8 @@ h4 {
     width: 45px;
     cursor: pointer;
 }
-.icon-filter-button{
+
+.icon-filter-button {
     border: 4px solid var(--color5);
     border-radius: 8px;
     border-top-right-radius: 0;
@@ -459,12 +515,14 @@ h4 {
     color: var(--color2);
     cursor: pointer;
 }
-.max-filter-container{
+
+.max-filter-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     gap: 10px;
     max-width: 90%;
 }
+
 @media screen and (max-width: 720px) {
     nav {
         gap: 10px;
@@ -487,11 +545,12 @@ h4 {
 }
 
 @media screen and (max-width: 450px) {
-    .card-container{
+    .card-container {
         margin-left: 0px;
         margin-right: 0px;
     }
-    .card{
+
+    .card {
         min-width: 90%;
         max-width: 90%;
         padding-bottom: 55px;
@@ -501,12 +560,14 @@ h4 {
 input[type="checkbox"] {
     display: none;
 }
+
 .checkbox-label {
     display: flex;
     align-items: center;
     cursor: pointer;
     font-size: 16px;
 }
+
 .checkbox-label .custom-checkbox {
     width: 16px;
     height: 16px;
@@ -517,11 +578,13 @@ input[type="checkbox"] {
     margin-right: 10px;
     transition: all 0.3s;
 }
-input[type="checkbox"]:checked + .custom-checkbox {
+
+input[type="checkbox"]:checked+.custom-checkbox {
     background-color: #D8C99B;
     border-color: var(--color2);
 }
-input[type="checkbox"]:checked ~ .custom-checkbox::after {
+
+input[type="checkbox"]:checked~.custom-checkbox::after {
     content: "✔";
     color: var(--color4);
     font-size: 16px;
@@ -531,6 +594,7 @@ input[type="checkbox"]:checked ~ .custom-checkbox::after {
     transform: translate(-50%, -50%);
     font-weight: bold;
 }
+
 .checkbox-label .custom-checkbox:hover {
     border-color: var(--color3);
 }

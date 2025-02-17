@@ -1,11 +1,12 @@
-HABILIDADES
-·Filtros
-que se pueda mandar y recibir a tiempo real (autor sin case-sensitive)
-responsive filters (el checkbox tampoco es responsive xd)
-·Orden
+ORDEN
+en vez de orden cambiar los titulos (generarCards) le pdoes pasar un nuevo parametro o no se
 
-opcional: hacer array form de forms para el localStorage (  [...data ...Json.parse('form')]  )
+CAMBIO CARDS
+poner los titulos abajo de la foto
+arriba de la card, si dividis por mapa pones el agente; y si dividis por agente pones el mapa
+si te queda grande podes achicar la letra
 
 OTROS
 responsive nav 
-animaciones
+responsive filters (el checkbox tampoco es responsive xd)
+animaciones(como q el tacho de basura vibre para q se enteren q pueden eliminar filtros)

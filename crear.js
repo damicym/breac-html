@@ -52,7 +52,6 @@ fetch('data/agentes.json')
 
 function uncapitalize(str) {
     return str.charAt(0).toLowerCase() + str.slice(1)
-
 }
 
 document.getElementById('agente').addEventListener('change', event => {
@@ -136,7 +135,7 @@ function resetHabilidad() {
     inputHabilidad.disabled = true
     inputHabilidad.value = ""
 }
-function vaciarInput(array) {
+function vaciarInput() {
     formCrear.reset()
     resetPreviewPov()
     resetPreviewMap()
