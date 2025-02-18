@@ -1,10 +1,5 @@
-ORDEN
-en vez de orden cambiar los titulos (generarCards) le pdoes pasar un nuevo parametro o no se
-
-CAMBIO CARDS
-poner los titulos abajo de la foto
-arriba de la card, si dividis por mapa pones el agente; y si dividis por agente pones el mapa
-si te queda grande podes achicar la letra
+***no anda lo de que se pongan las habilidades
+que si dividis por mapa se ordene por agente; y si dividis por agente se ordene por mapa
 
 OTROS
 responsive nav 

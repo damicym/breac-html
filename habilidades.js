@@ -4,6 +4,7 @@
 //2. agregarlas en el momento a un nuevo container para el agente
 //filtros:
 //el boton de basura tiene que vaciar los inputs
+// si un input está vacío y haces submit, deberia estar como por default
 function capitalizeFirstLetter(val) {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1)
 }
@@ -14,14 +15,14 @@ function uncapitalize(str) {
 // JSON.parse(string) --> Devuelve un JSON
 //mis elementos:
 const maxContainer = document.getElementById("maxContainer")
-const inputOrder = document.getElementById('order-input-form-hb')
+const inputDivision = document.getElementById('order-input-form-hb')
 const inputAutor = document.getElementById('autor-input-form-hb')
 const inputHabilidad = document.getElementById('habilidad-input-form-hb')
 const inputAgente = document.getElementById('agente-input-form-hb')
 const inputMapa = document.getElementById('mapa-input-form-hb')
 const inputComp = document.getElementById('comp-input-form-hb')
 const formHb = document.getElementById('form-hb')
-// si un input está vacío y haces submit, deberia estar como por default
+
 resetHabilidad()
 let allCards = []
 let agentes = []
@@ -53,10 +54,10 @@ fetch('data/mapas.json')
                             }
                         }
                         allCards = [...cards, ...localData]
-
+                        cardsActuales = allCards
                         generarOpcionesMapas(allCards, mapas)
                         generarOpcionesAgentes(allCards, agentes)
-                        generarCards(allCards, agentes)
+                        generarCards(cardsActuales, agentes, mapas)
                     })
             })
 
@@ -92,25 +93,25 @@ inputAgente.addEventListener('change', event => {
     inputHabilidad.innerHTML = ""
     inputHabilidad.insertAdjacentHTML('beforeend', '<option value="">Elige una habilidad</option>')
     if (allCards.some(card => card.habilidad === agente.habilidades.h1)) {
-    let opcion1 = `<option value="${agente.habilidades.h1}">${capitalizeFirstLetter(agente.habilidades.h1)}</option>`
-    inputHabilidad.insertAdjacentHTML('beforeend', opcion1)
-}
-if (allCards.some(card => card.habilidad === agente.habilidades.h2)) {
-    let opcion2 = `<option value="${agente.habilidades.h2}">${capitalizeFirstLetter(agente.habilidades.h2)}</option>`
-    inputHabilidad.insertAdjacentHTML('beforeend', opcion2)
-}
-if (allCards.some(card => card.habilidad === agente.habilidades.h3)) {
-    let opcion3 = `<option value="${agente.habilidades.h3}">${capitalizeFirstLetter(agente.habilidades.h3)}</option>`
-    inputHabilidad.insertAdjacentHTML('beforeend', opcion3)
-}
-if (allCards.some(card => card.habilidad === agente.habilidades.h5)) {
-    let opcion4 = `<option value="${agente.habilidades.h4}">${capitalizeFirstLetter(agente.habilidades.h4)}</option>`
-    inputHabilidad.insertAdjacentHTML('beforeend', opcion4)
-}
+        let opcion1 = `<option value="${agente.habilidades.h1}">${capitalizeFirstLetter(agente.habilidades.h1)}</option>`
+        inputHabilidad.insertAdjacentHTML('beforeend', opcion1)
+    }
+    if (allCards.some(card => card.habilidad === agente.habilidades.h2)) {
+        let opcion2 = `<option value="${agente.habilidades.h2}">${capitalizeFirstLetter(agente.habilidades.h2)}</option>`
+        inputHabilidad.insertAdjacentHTML('beforeend', opcion2)
+    }
+    if (allCards.some(card => card.habilidad === agente.habilidades.h3)) {
+        let opcion3 = `<option value="${agente.habilidades.h3}">${capitalizeFirstLetter(agente.habilidades.h3)}</option>`
+        inputHabilidad.insertAdjacentHTML('beforeend', opcion3)
+    }
+    if (allCards.some(card => card.habilidad === agente.habilidades.h5)) {
+        let opcion4 = `<option value="${agente.habilidades.h4}">${capitalizeFirstLetter(agente.habilidades.h4)}</option>`
+        inputHabilidad.insertAdjacentHTML('beforeend', opcion4)
+    }
     if (agente.habilidades.h5) {
         if (allCards.some(card => card.habilidad === agente.habilidades.h1)) {
-        let opcion5 = `<option value="${agente.habilidades.h5}">${capitalizeFirstLetter(agente.habilidades.h5)}</option>`
-        inputHabilidad.insertAdjacentHTML('beforeend', opcion5)
+            let opcion5 = `<option value="${agente.habilidades.h5}">${capitalizeFirstLetter(agente.habilidades.h5)}</option>`
+            inputHabilidad.insertAdjacentHTML('beforeend', opcion5)
         }
     }
 })
@@ -131,8 +132,8 @@ function resetMapa() {
     inputMapa.value = ""
     inputMapa.disabled = false
 }
-function vaciarInput() {
-    inputAutor.value = ""
+function vaciarInput(autorBool) {
+    if(autorBool) inputAutor.value = ""
     inputAgente.value = ""
     inputComp.checked = false
     resetHabilidad()
@@ -155,6 +156,7 @@ inputAutor.addEventListener('input', event => {
     aplicarFiltros()
 })
 
+
 function aplicarFiltros() {
     cardsActuales = allCards
     if (inputComp.checked) cardsActuales = cardsActuales.filter(card => compMaps.includes(card.mapa))
@@ -162,42 +164,83 @@ function aplicarFiltros() {
     if (inputAgente.value) cardsActuales = cardsActuales.filter(card => card.agente === inputAgente.value)
     if (inputHabilidad.value) cardsActuales = cardsActuales.filter(card => card.habilidad === inputHabilidad.value)
     if (inputAutor.value) cardsActuales = cardsActuales.filter(card => card.nombre.toLowerCase().includes(inputAutor.value.toLowerCase()))
-    generarCards(cardsActuales, agentes) //a esto le vas a tener q pasar mapas dsps para lo de dividir
-    if(cardsActuales.length === 0) maxContainer.innerHTML += `
-    <div class="no-result">
+    generarCards(cardsActuales, agentes, mapas) //a esto le vas a tener q pasar mapas dsps para lo de dividir
+    if (cardsActuales.length === 0) maxContainer.innerHTML += `<div class="no-result">
     <h2 class="mapa-titulo" style="margin-bottom: 10px; color: #BD632F;">No se encontró ningún resultado :(</h2>
-    <span class="borrar-filtros-text" onclick="vaciarInput()">Borrar filtros establecidos</span>
-    </div>
-    `
+    <span class="borrar-filtros-text" onclick="vaciarInput(true)">Borrar condiciones de filtro</span>
+    </div>`
 }
-
-function generarCards(cards, agentes) {
+// declaro división:
+if(localStorage.getItem('division')) inputDivision.value = localStorage.getItem('division')
+    else inputDivision.value = "agente"
+inputDivision.addEventListener('change', event => {
+    var division = event.target.value
+    localStorage.setItem('division', division)
+    generarCards(cardsActuales, agentes, mapas)
+})
+function generarCards(cards, agentes, mapas) {
     maxContainer.innerHTML = ""
-    agentes.map(agente => {
-        const agenteCards = cards.filter(card => card.agente === agente.nombre)
-        if (agenteCards.length > 0) {
-            maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
+    let division
+    if(localStorage.getItem('division')) division = localStorage.getItem('division')
+    else division = "agente"
+    localStorage.getItem('division')
+    if (division === "agente") {
+        agentes.map(agente => {
+            const agenteCards = cards.filter(card => card.agente === agente.nombre)
+            if (agenteCards.length > 0) {
+                maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
                 <div class="card-container" id="${agente.nombre}-container"></div>`
-            const agenteContainer = document.getElementById(`${agente.nombre}-container`)
-            agenteCards.map((card, index) => {
-                let cardHtml = `<article class="card">
+                const agenteContainer = document.getElementById(`${agente.nombre}-container`)
+                agenteCards.map((card, index) => {
+                    let cardHtml = `<article class="card">
                                 <p class="title">
                                     <span class="title-num">${index + 1}</span>
-                                    <span class="title-text">${card.titleText}</span>
+                                    <span class="title-text">${card.mapa.toUpperCase()}</span>
                                 </p>
                                 <img class="map" src="${card.mapSrc}">
                                 <img class="pov" src="${card.povSrc}">
+                                <span class="title-text-user">${card.titleText}</span>
                                 <p class="desc">${card.desc}</p>
                                <div class="firma">
                                     <span class="autor">${card.nombre} •</span>
                                     <span class="fecha-card">${card.fecha}</span>
                                </div>
                             </article>`
-                agenteContainer.innerHTML += cardHtml
+                    agenteContainer.innerHTML += cardHtml
+                })
+            }
+        })
+    } else {
+        if (division === "mapa") {
+            mapas.map(mapa => {
+                const mapaCards = cards.filter(card => card.mapa === mapa.nombre)
+                if (mapaCards.length > 0) {
+                    maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(mapa.nombre)}</h2>
+                <div class="card-container" id="${mapa.nombre}-container"></div>`
+                    const mapaContainer = document.getElementById(`${mapa.nombre}-container`)
+                    mapaCards.map((card, index) => {
+                        let cardHtml = `<article class="card">
+                                <p class="title">
+                                    <span class="title-num">${index + 1}</span>
+                                    <span class="title-text">${card.agente.toUpperCase()}</span>
+                                </p>
+                                <img class="map" src="${card.mapSrc}">
+                                <img class="pov" src="${card.povSrc}">
+                                <span class="title-text-user">${card.titleText}</span>
+                                <p class="desc">${card.desc}</p>
+                               <div class="firma">
+                                    <span class="autor">${card.nombre} •</span>
+                                    <span class="fecha-card">${card.fecha}</span>
+                               </div>
+                            </article>`
+                        mapaContainer.innerHTML += cardHtml
+                    })
+                }
             })
         }
-    })
+    }
 }
+
 formHb.addEventListener('submit', event => {
     event.preventDefault()
 })

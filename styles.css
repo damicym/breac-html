@@ -345,6 +345,7 @@ label {
     max-height: 200px;
     border-radius: 5px;
     z-index: 10;
+    margin-bottom: 5px;
 }
 
 #map-preview {
@@ -374,12 +375,15 @@ label {
 .title-num:before {
     content: "#";
 }
-
+.title-text-user{
+    font-weight: bold;
+    color: rgb(39, 62, 71);
+    font-size: 1.3rem;
+}
 .card .title-text {
     font-weight: bold;
     color: rgb(39, 62, 71);
-    ;
-    margin: 0px
+    margin: 0px;
 }
 
 .title-text:before {
@@ -393,7 +397,7 @@ label {
 .desc {
     margin-bottom: 25px;
     text-align: justify;
-
+    margin-top: 3px;
 }
 
 h4 {
