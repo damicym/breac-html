@@ -187,7 +187,7 @@ inputDivision.addEventListener('change', event => {
     localStorage.setItem('division', division)
     generarCards(cardsActuales, agentes, mapas)
 })
-//adentro de agentes.map hacer un foreach(mapa in mapas) {agenteCards.filter(card => card.mapa === mapa) ...}
+
 function generarCards(cards, agentes, mapas) {
     maxContainer.innerHTML = ""
     let division
@@ -197,6 +197,7 @@ function generarCards(cards, agentes, mapas) {
     if (division === "agente") {
         agentes.map(agente => {
             const agenteCards = cards.filter(card => card.agente === agente.nombre)
+            agenteCards.sort((a, b) => a.mapa.localeCompare(b.mapa))
             if (agenteCards.length > 0) {
                 maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
                 <div class="card-container" id="${agente.nombre}-container"></div>`
@@ -224,6 +225,7 @@ function generarCards(cards, agentes, mapas) {
         if (division === "mapa") {
             mapas.map(mapa => {
                 const mapaCards = cards.filter(card => card.mapa === mapa.nombre)
+                mapaCards.sort((a, b) => a.agente.localeCompare(b.agente))
                 if (mapaCards.length > 0) {
                     maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(mapa.nombre)}</h2>
                 <div class="card-container" id="${mapa.nombre}-container"></div>`
