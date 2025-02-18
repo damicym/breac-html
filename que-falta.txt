@@ -1,6 +1,5 @@
-que si dividis por mapa se ordene por agente; y si dividis por agente se ordene por mapa
+que si dividis por mapa se ordene por agente; y si dividis por agente se ordene por mapa (hb.js)
 
 OTROS
-responsive nav 
 responsive filters (el checkbox tampoco es responsive xd)
 animaciones(como q el tacho de basura vibre para q se enteren q pueden eliminar filtros)

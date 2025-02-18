@@ -122,11 +122,6 @@ h2 {
     /* justify-content: center; */
 }
 
-@media screen and (max-width: 1019px) {
-    .card-container {
-        justify-content: center;
-    }
-}
 
 .card {
     background-color: rgb(216, 151, 60);
@@ -162,6 +157,7 @@ h2 {
     flex-direction: column;
     gap: 10px;
     margin: 0px;
+    max-width: 90%;
 }
 
 .card-form-2 {
@@ -289,6 +285,7 @@ label {
     font-style: italic;
     position: absolute;
     bottom: 2px;
+    font-size: 0.9rem;
 }
 
 .form-crear-firma {
@@ -333,7 +330,7 @@ label {
 #input-pov {
     opacity: 0;
     position: absolute;
-    bottom: 0px;
+    bottom: 8px;
     margin-left: 29%;
 }
 
@@ -397,7 +394,8 @@ label {
 .desc {
     margin-bottom: 25px;
     text-align: justify;
-    margin-top: 3px;
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
 h4 {
@@ -449,7 +447,7 @@ h4 {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 220px;
+    width: 260px;
     background-color: var(--color5);
     height: 30px;
     border: 5px solid var(--color5);
@@ -524,7 +522,47 @@ h4 {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    max-width: 90%;
+    max-width: 90vw;
+}
+.filter-search-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.select-filter-container{
+    gap: 10px;
+    display: flex;
+}
+@media screen and (max-width: 1530px){
+    .max-filter-container {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .filter-search-container{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1019px) {
+    .card-container {
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 900px) {
+    /* .filter-container{
+        flex-direction: column;
+    } */
+    nav {
+        gap: 10px;
+    }
+
+    .home-navbar {
+        font-size: 2.2rem;
+    }
+
+    .navbar-link {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 720px) {
@@ -538,26 +576,46 @@ h4 {
     }
 
     .navbar-link {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .home-navbar {
         font-size: 1.3rem;
     }
 }
 
+@media screen and (max-width: 500px) {
+    nav {
+        gap: 10px;
+    }
+
+    .home-navbar {
+        font-size: 1.5rem;
+    }
+
+    .navbar-link {
+        font-size: 1rem;
+    }
+}
 @media screen and (max-width: 450px) {
     .card-container {
         margin-left: 0px;
         margin-right: 0px;
     }
-
     .card {
         min-width: 90%;
         max-width: 90%;
         padding-bottom: 55px;
+    }
+    .map{
+        height: 120px;
+        width: 120px;
+    }
+    nav {
+        gap: 8px;
+    }
+    .home-navbar {
+        font-size: 1.1rem;
+    }
+
+    .navbar-link {
+        font-size: 0.9rem;
     }
 }
 
@@ -575,6 +633,8 @@ input[type="checkbox"] {
 .checkbox-label .custom-checkbox {
     width: 16px;
     height: 16px;
+    max-width: 16px;
+    max-height: 16px;
     border: 2px solid var(--color2);
     border-radius: 5px;
     display: inline-block;

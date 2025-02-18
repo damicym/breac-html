@@ -133,7 +133,7 @@ function resetMapa() {
     inputMapa.disabled = false
 }
 function vaciarInput(autorBool) {
-    if(autorBool) inputAutor.value = ""
+    if (autorBool) inputAutor.value = ""
     inputAgente.value = ""
     inputComp.checked = false
     resetHabilidad()
@@ -141,8 +141,8 @@ function vaciarInput(autorBool) {
     aplicarFiltros()
     revisarBasura()
 }
-function revisarBasura(){
-    if(inputComp.checked || inputMapa.value || inputAgente.value || inputHabilidad.value) basura.style.color = "#BD632F"
+function revisarBasura() {
+    if (inputComp.checked || inputMapa.value || inputAgente.value || inputHabilidad.value) basura.style.color = "#BD632F"
     else basura.style.color = "#D8C99B"
 }
 inputMapa.addEventListener('change', event => {
@@ -180,17 +180,18 @@ function aplicarFiltros() {
     </div>`
 }
 // declaro división:
-if(localStorage.getItem('division')) inputDivision.value = localStorage.getItem('division')
-    else inputDivision.value = "agente"
+if (localStorage.getItem('division')) inputDivision.value = localStorage.getItem('division')
+else inputDivision.value = "agente"
 inputDivision.addEventListener('change', event => {
     var division = event.target.value
     localStorage.setItem('division', division)
     generarCards(cardsActuales, agentes, mapas)
 })
+//adentro de agentes.map hacer un foreach(mapa in mapas) {agenteCards.filter(card => card.mapa === mapa) ...}
 function generarCards(cards, agentes, mapas) {
     maxContainer.innerHTML = ""
     let division
-    if(localStorage.getItem('division')) division = localStorage.getItem('division')
+    if (localStorage.getItem('division')) division = localStorage.getItem('division')
     else division = "agente"
     localStorage.getItem('division')
     if (division === "agente") {
@@ -200,8 +201,8 @@ function generarCards(cards, agentes, mapas) {
                 maxContainer.innerHTML += `<h2 class="mapa-titulo">${capitalizeFirstLetter(agente.nombre)}</h2>
                 <div class="card-container" id="${agente.nombre}-container"></div>`
                 const agenteContainer = document.getElementById(`${agente.nombre}-container`)
-                agenteCards.map((card, index) => {
-                    let cardHtml = `<article class="card">
+                    agenteCards.map((card, index) => {
+                        let cardHtml = `<article class="card">
                                 <p class="title">
                                     <span class="title-num">${index + 1}</span>
                                     <span class="title-text">${card.mapa.toUpperCase()}</span>
@@ -215,8 +216,8 @@ function generarCards(cards, agentes, mapas) {
                                     <span class="fecha-card">${card.fecha}</span>
                                </div>
                             </article>`
-                    agenteContainer.innerHTML += cardHtml
-                })
+                        agenteContainer.innerHTML += cardHtml
+                    })
             }
         })
     } else {
