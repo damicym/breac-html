@@ -1,4 +1,3 @@
-***no anda lo de que se pongan las habilidades
 que si dividis por mapa se ordene por agente; y si dividis por agente se ordene por mapa
 
 OTROS

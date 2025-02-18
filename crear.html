@@ -28,9 +28,7 @@
 
 
         <div class="card-form">
-            <span class="ast"><b>*</b></span>
-            <input autocomplete="off" name="titleText" id="title" class="input-form-crear-title" type="text"
-                placeholder="Título" required>
+
             <div>
                 <div class="div-input-pov">
                     <input type="file" name="povSrc" accept="image/*" id="input-pov" required>
@@ -42,6 +40,11 @@
                     <img onclick="function2()" style="border: 3px solid #D8973C; opacity: 1; transform: none;"
                         id="map-preview" src="./images/map-placeholder.png" class="map">
                 </div>
+            </div>
+            <div>
+                <span class="ast"><b>*</b></span>
+                <input autocomplete="off" name="titleText" id="title" class="input-form-crear-title" type="text"
+                    placeholder="Título" required>
             </div>
             <textarea name="desc" autocomplete="off" class="input-form-crear-desc" type="text" rows="7"
                 placeholder="Descripción (para qué sirve, cuándo usarla, con qué combearla, qué hacer después de usarla)"></textarea>
@@ -90,13 +93,14 @@
     </form>
 
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="liveToast" class="toast align-items-center mi-toast border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
-        <div class="d-flex">
-          <div class="toast-body">
-            ¡Artículo publicado exitosamente!
-      </div>
-    </div>
-    <script src="crear.js"></script>
+        <div id="liveToast" class="toast align-items-center mi-toast border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" data-bs-delay="3000">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ¡Artículo publicado exitosamente!
+                </div>
+            </div>
+            <script src="crear.js"></script>
 </body>
 
 </html>

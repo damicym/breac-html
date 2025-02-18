@@ -22,6 +22,7 @@ const inputAgente = document.getElementById('agente-input-form-hb')
 const inputMapa = document.getElementById('mapa-input-form-hb')
 const inputComp = document.getElementById('comp-input-form-hb')
 const formHb = document.getElementById('form-hb')
+const basura = document.getElementById('basura')
 
 resetHabilidad()
 let allCards = []
@@ -85,31 +86,30 @@ function generarOpcionesMapas(cards, mapas) {
 
 //💀💀💀:
 inputAgente.addEventListener('change', event => {
-    //esta funcion es el codigo menos modularizado, organizado, apropiado, eficiente, y decente que hice en mi vida. 
-    //solo sé que funciona y mientras no afecte a lo responsive de mi página nunca voy a volver a entrar a ver qué sentido tiene esta función.
     const agenteSeleccionado = event.target.value
     const indice = agentes.findIndex(obj => obj.nombre === agenteSeleccionado)
     const agente = agentes[indice]
     inputHabilidad.innerHTML = ""
     inputHabilidad.insertAdjacentHTML('beforeend', '<option value="">Elige una habilidad</option>')
-    if (allCards.some(card => card.habilidad === agente.habilidades.h1)) {
+    var cardsAgenteSeleccionado = allCards.filter(card => card.agente === agenteSeleccionado)
+    if (cardsAgenteSeleccionado.some(card => card.habilidad === agente.habilidades.h1)) {
         let opcion1 = `<option value="${agente.habilidades.h1}">${capitalizeFirstLetter(agente.habilidades.h1)}</option>`
         inputHabilidad.insertAdjacentHTML('beforeend', opcion1)
     }
-    if (allCards.some(card => card.habilidad === agente.habilidades.h2)) {
+    if (cardsAgenteSeleccionado.some(card => card.habilidad === agente.habilidades.h2)) {
         let opcion2 = `<option value="${agente.habilidades.h2}">${capitalizeFirstLetter(agente.habilidades.h2)}</option>`
         inputHabilidad.insertAdjacentHTML('beforeend', opcion2)
     }
-    if (allCards.some(card => card.habilidad === agente.habilidades.h3)) {
+    if (cardsAgenteSeleccionado.some(card => card.habilidad === agente.habilidades.h3)) {
         let opcion3 = `<option value="${agente.habilidades.h3}">${capitalizeFirstLetter(agente.habilidades.h3)}</option>`
         inputHabilidad.insertAdjacentHTML('beforeend', opcion3)
     }
-    if (allCards.some(card => card.habilidad === agente.habilidades.h5)) {
+    if (cardsAgenteSeleccionado.some(card => card.habilidad === agente.habilidades.h4)) {
         let opcion4 = `<option value="${agente.habilidades.h4}">${capitalizeFirstLetter(agente.habilidades.h4)}</option>`
         inputHabilidad.insertAdjacentHTML('beforeend', opcion4)
     }
     if (agente.habilidades.h5) {
-        if (allCards.some(card => card.habilidad === agente.habilidades.h1)) {
+        if (cardsAgenteSeleccionado.some(card => card.habilidad === agente.habilidades.h5)) {
             let opcion5 = `<option value="${agente.habilidades.h5}">${capitalizeFirstLetter(agente.habilidades.h5)}</option>`
             inputHabilidad.insertAdjacentHTML('beforeend', opcion5)
         }
@@ -139,18 +139,27 @@ function vaciarInput(autorBool) {
     resetHabilidad()
     resetMapa()
     aplicarFiltros()
+    revisarBasura()
+}
+function revisarBasura(){
+    if(inputComp.checked || inputMapa.value || inputAgente.value || inputHabilidad.value) basura.style.color = "#BD632F"
+    else basura.style.color = "#D8C99B"
 }
 inputMapa.addEventListener('change', event => {
     aplicarFiltros()
+    revisarBasura()
 })
 inputAgente.addEventListener('change', event => {
     aplicarFiltros()
+    revisarBasura()
 })
 inputHabilidad.addEventListener('change', event => {
     aplicarFiltros()
+    revisarBasura()
 })
 inputComp.addEventListener('change', event => {
     aplicarFiltros()
+    revisarBasura()
 })
 inputAutor.addEventListener('input', event => {
     aplicarFiltros()
