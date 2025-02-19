@@ -29,14 +29,14 @@ const mostrarFecha = () => {
         minute: '2-digit',
         hour12: false
     }
-
+    const fechaIntervaloSeg = setInterval(mostrarFecha, 1000)
+    // fechaIntervaloMin = setInterval(mostrarFecha, 60000)
     const fechaHoy = new Date().toLocaleString('es-ES', opcionesfecha).replace(',', ' •')
     document.getElementById('fecha-hoy').innerHTML = fechaHoy
-
 }
-
 mostrarFecha()
-setInterval(mostrarFecha, 60000)
+
+
 
 fetch('data/agentes.json')
     .then(data => data.json())
@@ -156,9 +156,9 @@ formCrear.addEventListener('submit', event => {
         minute: '2-digit',
         hour12: false
     };
-    const fechaHoy = new Date().toLocaleString('es-ES', opcionesfecha).replace(',', ' •')
-
-    formObject.fecha = fechaHoy
+    const fechaHoy = new Date()
+    // .toLocaleString('es-ES', opcionesfecha).replace(',', ' •')
+    formObject.fecha = fechaHoy.toISOString()
     if(formObject.povSrc){
         let reader = new FileReader();
         reader.readAsDataURL(formObject.povSrc)

@@ -187,7 +187,14 @@ inputDivision.addEventListener('change', event => {
     localStorage.setItem('division', division)
     generarCards(cardsActuales, agentes, mapas)
 })
-
+const opcionesfecha = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+};
 function generarCards(cards, agentes, mapas) {
     maxContainer.innerHTML = ""
     let division
@@ -214,7 +221,7 @@ function generarCards(cards, agentes, mapas) {
                                 <p class="desc">${card.desc}</p>
                                <div class="firma">
                                     <span class="autor">${card.nombre} •</span>
-                                    <span class="fecha-card">${card.fecha}</span>
+                                    <span class="fecha-card">${new Date(card.fecha).toLocaleString('es-ES', opcionesfecha).replace(',', ' •')}</span>
                                </div>
                             </article>`
                         agenteContainer.innerHTML += cardHtml

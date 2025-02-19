@@ -1,5 +1,3 @@
-que las fechas sean fechas
-
 OTROS
-responsive filters (el checkbox tampoco es responsive xd)
+responsive filters
 animaciones(como q el tacho de basura vibre para q se enteren q pueden eliminar filtros)

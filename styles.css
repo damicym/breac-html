@@ -107,8 +107,10 @@ h1 {
 }
 
 h2 {
-    color: rgb(39, 62, 71);
     font-size: 2rem;
+    background: linear-gradient(180deg, var(--color5) 0%, var(--color4) 200%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .card-container {
