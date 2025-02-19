@@ -281,7 +281,6 @@ label {
     top: 10px;
 }
 .ast {
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     position: absolute;
     padding-left: 6px;
     padding-top: 1px;
