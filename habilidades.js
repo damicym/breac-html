@@ -133,6 +133,7 @@ function resetMapa() {
     inputMapa.disabled = false
 }
 function vaciarInput(autorBool) {
+    basura.style.animation = "shake2 0.5s ease-in-out"
     if (autorBool) inputAutor.value = ""
     inputAgente.value = ""
     inputComp.checked = false
@@ -142,7 +143,14 @@ function vaciarInput(autorBool) {
     revisarBasura()
 }
 function revisarBasura() {
-    if (inputComp.checked || inputMapa.value || inputAgente.value || inputHabilidad.value) basura.style.color = "#BD632F"
+    if (inputComp.checked || inputMapa.value || inputAgente.value || inputHabilidad.value){
+        basura.style.animation = "none"
+        basura.offsetHeight
+        setTimeout(function() {
+            basura.style.animation = "shake 0.5s ease-in-out"
+        }, 10)
+        basura.style.color = "#BD632F"
+    }
     else basura.style.color = "#D8C99B"
 }
 inputMapa.addEventListener('change', event => {
@@ -176,7 +184,7 @@ function aplicarFiltros() {
     generarCards(cardsActuales, agentes, mapas) //a esto le vas a tener q pasar mapas dsps para lo de dividir
     if (cardsActuales.length === 0) maxContainer.innerHTML += `<div class="no-result">
     <h2 class="mapa-titulo" style="margin-bottom: 10px; color: #BD632F;">No se encontró ningún resultado :(</h2>
-    <span class="borrar-filtros-text" onclick="vaciarInput(true)">Borrar condiciones de filtro</span>
+    <span class="mi-link" onclick="vaciarInput(true)">Borrar condiciones de filtro</span>
     </div>`
 }
 // declaro división:

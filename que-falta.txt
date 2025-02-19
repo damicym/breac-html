@@ -1,3 +1,6 @@
-OTROS
+FAVS
+filtro de favorito
+estrella de favorito al lado de cada card
+que se guarde en el local storage tus favs (no sé cómo)
+
 responsive filters
-animaciones(como q el tacho de basura vibre para q se enteren q pueden eliminar filtros)

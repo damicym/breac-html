@@ -184,13 +184,6 @@ h2 {
     flex-direction: column;
 }
 
-.borrar-filtros-text {
-    color: rgb(89, 23, 151);
-    text-decoration: underline;
-    cursor: pointer;
-    font-weight: 500;
-}
-
 .form-crar-card-2-title {
     margin-bottom: 10px;
 }
@@ -274,14 +267,51 @@ label {
     padding: 4px;
     width: 100%;
 }
-
+#pov-preview{
+    transition: transform 0.2s ease-in-out;
+}
+#pov-preview:hover{
+    transform: translateY(-3px);
+}
+#map-preview:hover{
+    transform: translateY(-3px);
+}
+#map-preview {
+    transition: transform 0.2s ease-in-out;
+    top: 10px;
+}
 .ast {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     position: absolute;
     padding-left: 6px;
     padding-top: 1px;
     color: #A4243B;
 }
-
+.mi-link{
+    color: rgb(89, 23, 151);
+    transition: transform 0.2s ease-in-out;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.mi-link:hover{
+    transform: translateY(-1px);
+}
+@keyframes shake {
+    0% { transform: rotate(5deg) }
+    25% { transform: rotate(-5deg) }
+    50% { transform: rotate(-5deg) }
+    75% { transform: rotate(5deg) }
+    100% { transform: rotate(5deg) }
+}
+@keyframes shake2 {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
 .firma {
     color: var(--color5);
     font-style: italic;
@@ -307,7 +337,7 @@ label {
 }
 
 .input-form-crear-desc {
-
+    resize: none;
     font-size: 1rem;
     font-style: italic;
     outline: none;
@@ -347,9 +377,7 @@ label {
     margin-bottom: 5px;
 }
 
-#map-preview {
-    top: 10px;
-}
+
 
 .map {
     margin: 5px;
